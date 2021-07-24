@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open --port 4209",
+    "start-with-proxy": "ng serve --proxy-config proxy.config.json --open --port 4209",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

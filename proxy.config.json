@@ -1,0 +1,8 @@
+{
+  "context": ["/get-user", "/register-user", "/play"],
+  "target": "https://demo-game.debugger.pl",
+  "secure": false,
+  "ws": true,
+  "changeOrigin": true,
+  "logLevel": "debug"
+}
