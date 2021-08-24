@@ -1,4 +1,5 @@
-import { HttpResponseModel } from './../../../../utils/models';
+import { map } from 'rxjs/operators';
+import { HttpResponseModel, ItemModel } from './../../../../utils/models';
 import { Observable } from 'rxjs';
 import { Api } from './../../../../utils/api';
 import { HttpClient } from '@angular/common/http';
@@ -10,14 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
-  data$!: Observable<HttpResponseModel>;
+  data$!: Observable<ItemModel[]>;
 
   constructor(
     private http: HttpClient
   ) { }
 
   ngOnInit(): void {
-    this.data$ = this.http.get<HttpResponseModel>(Api.ITEMS_END_POINT)
+    this.data$ = this.http.get<HttpResponseModel>(Api.ITEMS_END_POINT).pipe(map((resp: HttpResponseModel) => resp.data))
+  }
+
+  buy(item:ItemModel){
+    debugger;
   }
 
 }

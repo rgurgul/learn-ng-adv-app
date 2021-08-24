@@ -1,3 +1,12 @@
-<p>items works!</p>
-
-{{data$|async|json}}
+<table>
+  <thead></thead>
+  <tbody>
+    <tr *ngFor="let item of data$|async">
+      <td>{{item.title}}</td>
+      <td>{{item.price}}</td>
+      <td>
+        <button (click)="buy(item)">buy</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
