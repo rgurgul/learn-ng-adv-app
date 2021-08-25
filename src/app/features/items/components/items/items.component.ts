@@ -14,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsComponent implements OnInit {
 
-  data$: Observable<ItemModel[]> = this.itemsService.get();
+  data$: Observable<ItemModel[]> = this.itemsService.getState();
 
   constructor(
     private cartStoreService: CartService,
