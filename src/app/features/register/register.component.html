@@ -1,1 +1,5 @@
-<p>register works!</p>
+<ng-template #playerTpl let-xx>
+  <div class="el" [id]="xx.username" [ngStyle]="{'left.px': xx.clientX, 'top.px': xx.clientY }">
+    {{xx.username}}
+  </div>
+</ng-template>

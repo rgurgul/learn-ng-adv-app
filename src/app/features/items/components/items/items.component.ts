@@ -1,3 +1,5 @@
+import { ItemsService } from './../../items.service';
+import { CartService } from './../../../cart/cart.service';
 import { map } from 'rxjs/operators';
 import { HttpResponseModel, ItemModel } from './../../../../utils/models';
 import { Observable } from 'rxjs';
@@ -11,18 +13,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
-  data$!: Observable<ItemModel[]>;
+
+  data$: Observable<ItemModel[]> = this.itemsService.get();
 
   constructor(
-    private http: HttpClient
-  ) { }
+    private cartStoreService: CartService,
+    private itemsService:ItemsService
+  ) {
+    this.cartStoreService.getState().subscribe(console.log)
+   }
 
   ngOnInit(): void {
-    this.data$ = this.http.get<HttpResponseModel>(Api.ITEMS_END_POINT).pipe(map((resp: HttpResponseModel) => resp.data))
+
   }
 
-  buy(item:ItemModel){
-    debugger;
+  buy(item: ItemModel) {
+    //this.cartStoreService.setState([{ ...item, count:1 }]);
+    this.cartStoreService.addItem(item);
   }
 
 }
