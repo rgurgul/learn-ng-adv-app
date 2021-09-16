@@ -1,0 +1,17 @@
+<!-- {{items$|async|json}} -->
+
+<div class="m-5 p-5 bg-gradient-to-br from-gray-100 to-gray-300 rounded-sm">
+  <app-data-grid [data]="items$|async">
+    <ng-template let-x>
+      <td>{{x.title}}</td>
+      <td>{{x.price}}</td>
+      <td>
+        <img [src]="x.imgSrc" width="50">
+      </td>
+      <td>
+        <button  class="rounded-sm p-3 bg-pink-500 mr-2">more</button>
+        <button (click)="buy(x)" class="rounded-sm p-3 bg-pink-800 mr-2 text-white">buy</button>
+      </td>
+    </ng-template>
+  </app-data-grid>
+</div>

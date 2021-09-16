@@ -1,0 +1,12 @@
+<p>cart works!</p>
+
+<app-data-grid [data]="items$|async">
+  <ng-template let-x>
+    <td>{{x.title}}</td>
+    <td>{{x.count}}</td>
+    <td>
+      <button class="rounded-md p-4 bg-red-400 mr-1" (click)='add(x)'>+</button>
+      <button class="rounded-md p-4 bg-red-400" (click)="remove(x)">-</button>
+    </td>
+  </ng-template>
+</app-data-grid>
