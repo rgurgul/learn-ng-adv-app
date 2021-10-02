@@ -28,7 +28,7 @@ export class XhrInterceptor implements HttpInterceptor {
               this.notification.showError(error);
               this.loadingState.setState(false);
           }
-          return throwError(error);
+          return throwError(() => error);
         })
       )
   }
