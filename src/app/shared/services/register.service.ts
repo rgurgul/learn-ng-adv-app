@@ -1,4 +1,4 @@
-import { FieldConfig } from './../../utils/models';
+import { FieldConfig } from './../../utils/form.models';
 import { Api } from './../../utils/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';

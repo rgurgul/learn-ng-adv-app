@@ -1,4 +1,4 @@
-import { Message } from './../../utils/models';
+import { Message } from '../../utils/services.models';
 import { Api } from './../../utils/api';
 import { Injectable } from '@angular/core';
 import { webSocket } from 'rxjs/webSocket';
