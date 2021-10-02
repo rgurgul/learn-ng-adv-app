@@ -1,5 +1,5 @@
-import { FieldConfig } from './../../utils/form.models';
-import { Api } from './../../utils/api';
+import { FieldConfig } from '../models/form.models';
+import { Api } from '../utils/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators";

@@ -1,4 +1,4 @@
-import { environment } from './../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 export class Api {
   private static DATA_BASE_END_POINT = 'https://api.debugger.pl/';
